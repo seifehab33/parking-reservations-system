@@ -56,7 +56,7 @@ const menuItems = [
 const adminItems = [
   {
     title: "Zone Management",
-    url: "/admin/zones",
+    url: "/admin/zone-management",
     icon: Settings,
   },
   {

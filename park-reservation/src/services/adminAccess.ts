@@ -19,3 +19,7 @@ export async function getZonesById(gateId: string | null): Promise<ZoneData[]> {
   const res = await api.get<ZoneData[]>(`/master/zones?gateId=${gateId}`);
   return res.data;
 }
+export async function switchZone(zoneId: string | null): Promise<ZoneData> {
+  const res = await api.put<ZoneData>(`/admin/zones/${zoneId}/open`);
+  return res.data;
+}
