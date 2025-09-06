@@ -1,0 +1,199 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* WeLink Cargo Parking System Design System */
+@layer base {
+  :root {
+    /* Base Colors */
+    --background: 0 0% 100%;
+    --foreground: 210 11% 15%;
+
+    /* Brand Colors - Professional Logistics Theme */
+    --primary: 217 91% 60%; /* Professional Blue */
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 217 91% 55%;
+
+    --secondary: 210 17% 98%;
+    --secondary-foreground: 210 11% 15%;
+
+    /* Accent Colors for Status */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --danger: 0 84% 60%;
+    --danger-foreground: 0 0% 100%;
+
+    /* Neutral Palette */
+    --muted: 210 17% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 210 17% 96%;
+    --accent-foreground: 210 11% 15%;
+
+    /* UI Elements */
+    --card: 0 0% 100%;
+    --card-foreground: 210 11% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 11% 15%;
+    --border: 210 20% 91%;
+    --input: 210 20% 91%;
+    --ring: 217 91% 60%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Sidebar */
+    --sidebar-background: 210 30% 8%;
+    --sidebar-foreground: 210 17% 96%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 25% 12%;
+    --sidebar-accent-foreground: 210 17% 96%;
+    --sidebar-border: 210 25% 15%;
+    --sidebar-ring: 217 91% 60%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(217 91% 60%) 0%,
+      hsl(217 91% 55%) 100%
+    );
+    --gradient-success: linear-gradient(
+      135deg,
+      hsl(142 76% 36%) 0%,
+      hsl(142 76% 31%) 100%
+    );
+    --gradient-card: linear-gradient(
+      145deg,
+      hsl(0 0% 100%) 0%,
+      hsl(210 17% 99%) 100%
+    );
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(210 20% 91% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(210 20% 91% / 0.1),
+      0 2px 4px -1px hsl(210 20% 91% / 0.06);
+    --shadow-lg: 0 10px 15px -3px hsl(210 20% 91% / 0.1),
+      0 4px 6px -2px hsl(210 20% 91% / 0.05);
+    --shadow-primary: 0 10px 25px -3px hsl(217 91% 60% / 0.3);
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 210 30% 8%;
+    --foreground: 210 17% 96%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 217 91% 65%;
+
+    --secondary: 210 25% 12%;
+    --secondary-foreground: 210 17% 96%;
+
+    --success: 142 76% 45%;
+    --warning: 38 92% 55%;
+    --danger: 0 84% 65%;
+
+    --muted: 210 25% 12%;
+    --muted-foreground: 215 16% 65%;
+    --accent: 210 25% 12%;
+    --accent-foreground: 210 17% 96%;
+
+    --card: 210 25% 10%;
+    --card-foreground: 210 17% 96%;
+    --popover: 210 25% 10%;
+    --popover-foreground: 210 17% 96%;
+    --border: 210 25% 15%;
+    --input: 210 25% 15%;
+
+    --gradient-card: linear-gradient(
+      145deg,
+      hsl(210 25% 10%) 0%,
+      hsl(210 25% 12%) 100%
+    );
+    --shadow-primary: 0 10px 25px -3px hsl(217 91% 60% / 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  /* Status Indicators */
+  .status-available {
+    @apply bg-success text-success-foreground;
+  }
+
+  .status-occupied {
+    @apply bg-danger text-danger-foreground;
+  }
+
+  .status-reserved {
+    @apply bg-warning text-warning-foreground;
+  }
+
+  .status-maintenance {
+    @apply bg-muted-foreground text-background;
+  }
+
+  /* Animations */
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.2s ease-out;
+  }
+
+  .animate-pulse-success {
+    animation: pulseSuccess 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulseSuccess {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
