@@ -46,11 +46,6 @@ const menuItems = [
     url: "/checkin-out",
     icon: Timer,
   },
-  {
-    title: "Reports",
-    url: "/reports",
-    icon: BarChart3,
-  },
 ];
 
 const adminItems = [
@@ -68,6 +63,11 @@ const adminItems = [
     title: "System Settings",
     url: "/admin/system-settings",
     icon: Settings,
+  },
+  {
+    title: "Reports",
+    url: "/admin/reports/parking-state",
+    icon: BarChart3,
   },
   {
     title: "Categories",

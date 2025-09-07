@@ -13,3 +13,7 @@ export interface ZoneData {
   rateSpecial: number;
   open: boolean;
 }
+export interface openZoneResponse {
+  zoneId: string;
+  open: boolean;
+}

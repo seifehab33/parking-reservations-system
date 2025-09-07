@@ -26,7 +26,7 @@ const ZoneManagement = () => {
     toggleMutation.mutate({
       zoneId: zone.id,
       zoneName: zone.name,
-      currentOpen: zone.open,
+      newOpen: !zone.open,
     });
   };
 

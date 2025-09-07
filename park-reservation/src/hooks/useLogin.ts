@@ -20,7 +20,8 @@ export function useLogin() {
     onError: (error) => {
       localStorage.removeItem("token");
       localStorage.removeItem("userRole");
-      const message = error.response?.data?.error ?? "Login failed. Try again.";
+      const message =
+        error.response?.data?.message ?? "Login failed. Try again.";
       toast.error(message);
     },
   });

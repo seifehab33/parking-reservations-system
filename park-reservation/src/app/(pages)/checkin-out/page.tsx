@@ -1,6 +1,7 @@
 "use client";
 
 import GateCheckIn from "@/components/tabs/CheckIn";
+import GateCheckOut from "@/components/tabs/CheckOut";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -18,8 +19,11 @@ function CheckIn_Out() {
 
   const handleTabChange = (value: string) => {
     setTab(value);
-    const params = new URLSearchParams(window.location.search);
+
+    // Start with a fresh set of params
+    const params = new URLSearchParams();
     params.set("tab", value);
+
     router.replace(`?${params.toString()}`);
   };
 
@@ -40,9 +44,7 @@ function CheckIn_Out() {
         </TabsContent>
 
         <TabsContent value="checkout" className="mt-4">
-          <div className="text-gray-500 text-center py-12 border rounded-xl bg-gray-50">
-            🚪 Checkout flow coming soon...
-          </div>
+          <GateCheckOut />
         </TabsContent>
       </Tabs>
     </div>

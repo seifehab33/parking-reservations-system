@@ -1,3 +1,5 @@
+import { ZoneData } from "./Zone";
+
 export interface CheckInTicketData {
   gateId: string;
   zoneId: string;
@@ -20,4 +22,25 @@ export interface TicketResponse {
 export interface CheckInResponse {
   ticket: TicketResponse;
   //   zoneState: ZoneState;
+}
+interface BreakdownItem {
+  from: string;
+  to: string;
+  hours: number;
+  rateMode: "normal" | "special";
+  rate: number;
+  amount: number;
+}
+export interface CheckOutTicketData {
+  ticketId: string;
+  forceConvertToVisitor?: boolean;
+}
+export interface CheckOutResponse {
+  ticketId: string;
+  checkinAt: string;
+  checkoutAt: string;
+  durationHours: number;
+  breakdown: BreakdownItem[];
+  amount: number;
+  zoneState: ZoneData; // adjust if you have Zone type
 }

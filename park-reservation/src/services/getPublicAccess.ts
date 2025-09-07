@@ -1,7 +1,12 @@
 import api from "@/lib/axios";
 import { CategoriesData } from "@/types/Categories";
 import { GatesData } from "@/types/Gates";
-import { CheckInTicketData, TicketResponse } from "@/types/Ticket";
+import {
+  CheckInTicketData,
+  CheckOutResponse,
+  CheckOutTicketData,
+  TicketResponse,
+} from "@/types/Ticket";
 import { ZoneData } from "@/types/Zone";
 
 export async function getCategories(): Promise<CategoriesData[]> {
@@ -25,4 +30,8 @@ export async function getTicketById(
 ): Promise<TicketResponse> {
   const response = await api.get(`/tickets/${id}`);
   return response.data;
+}
+export async function checkOutTicket(payload: CheckOutTicketData) {
+  const res = await api.post<CheckOutResponse>("/tickets/checkout", payload);
+  return res.data;
 }

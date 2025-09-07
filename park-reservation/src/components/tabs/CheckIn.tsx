@@ -226,49 +226,54 @@ export default function GateCheckIn() {
             </h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="flex flex-col items-start">
-                <span className="text-sm text-gray-500">Ticket ID</span>
-                <Badge variant="secondary" className="mt-1 font-mono px-3">
-                  {ticketInfo.id}
-                </Badge>
-              </div>
+              {isLoading && <LoadingWrapper />}
+              {!isLoading && (
+                <>
+                  <div className="flex flex-col items-start">
+                    <span className="text-sm text-gray-500">Ticket ID</span>
+                    <Badge variant="secondary" className="mt-1 font-mono px-3">
+                      {ticketInfo.id}
+                    </Badge>
+                  </div>
 
-              <div className="flex flex-col items-start">
-                <span className="text-sm text-gray-500">Gate</span>
-                <Badge variant="secondary" className="mt-1 px-3">
-                  {ticketInfo.gateId}
-                </Badge>
-              </div>
+                  <div className="flex flex-col items-start">
+                    <span className="text-sm text-gray-500">Gate</span>
+                    <Badge variant="secondary" className="mt-1 px-3">
+                      {ticketInfo.gateId}
+                    </Badge>
+                  </div>
 
-              <div className="flex flex-col items-start">
-                <span className="text-sm text-gray-500">Zone</span>
-                <Badge variant="secondary" className="mt-1 px-3">
-                  {ticketInfo.zoneId}
-                </Badge>
-              </div>
+                  <div className="flex flex-col items-start">
+                    <span className="text-sm text-gray-500">Zone</span>
+                    <Badge variant="secondary" className="mt-1 px-3">
+                      {ticketInfo.zoneId}
+                    </Badge>
+                  </div>
 
-              <div className="flex flex-col items-start">
-                <span className="text-sm text-gray-500">Type</span>
-                <Badge variant="secondary" className="mt-1 px-3 capitalize">
-                  {ticketInfo.type}
-                </Badge>
-              </div>
+                  <div className="flex flex-col items-start">
+                    <span className="text-sm text-gray-500">Type</span>
+                    <Badge variant="secondary" className="mt-1 px-3 capitalize">
+                      {ticketInfo.type}
+                    </Badge>
+                  </div>
 
-              <div className="flex flex-col items-start">
-                <span className="text-sm text-gray-500">Check-In</span>
-                <Badge variant="secondary" className="mt-1 px-3">
-                  {formatDate(ticketInfo.checkinAt)}
-                </Badge>
-              </div>
+                  <div className="flex flex-col items-start">
+                    <span className="text-sm text-gray-500">Check-In</span>
+                    <Badge variant="secondary" className="mt-1 px-3">
+                      {formatDate(ticketInfo.checkinAt)}
+                    </Badge>
+                  </div>
 
-              <div className="flex flex-col items-start">
-                <span className="text-sm text-gray-500">Check-Out</span>
-                <Badge variant="secondary" className="mt-1 px-3">
-                  {ticketInfo.checkoutAt
-                    ? formatDate(ticketInfo.checkoutAt)
-                    : "—"}
-                </Badge>
-              </div>
+                  <div className="flex flex-col items-start">
+                    <span className="text-sm text-gray-500">Check-Out</span>
+                    <Badge variant="secondary" className="mt-1 px-3">
+                      {ticketInfo.checkoutAt
+                        ? formatDate(ticketInfo.checkoutAt)
+                        : "—"}
+                    </Badge>
+                  </div>
+                </>
+              )}
             </div>
           </div>
           <Button onClick={() => handlePrint(printRef)} className="w-full mb-2">
