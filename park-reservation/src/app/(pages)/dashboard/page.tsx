@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Clock, CheckCircle, XCircle } from "lucide-react";
 import useZone from "@/hooks/useZone";
 import useCategories from "@/hooks/useCategories";
-import Stats from "@/components/DashboardStats/Stats";
+import Stats from "@/components/dashboardStats/Stats";
 import { Skeleton } from "@/components/ui/skeleton";
 import { LoadingWrapper } from "@/components/loading/LoadingWrapper";
 import { ErrorWrapper } from "@/components/error/ErrorWrapper";

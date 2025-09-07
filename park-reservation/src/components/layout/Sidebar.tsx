@@ -43,7 +43,7 @@ const menuItems = [
   },
   {
     title: "Check In/Out",
-    url: "/tickets",
+    url: "/checkin-out",
     icon: Timer,
   },
   {

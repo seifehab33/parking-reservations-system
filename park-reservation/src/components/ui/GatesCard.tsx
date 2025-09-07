@@ -4,7 +4,7 @@ import { CheckCircle, DoorOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ZoneData } from "@/types/Zone";
 import { GatesData } from "@/types/Gates";
-import ZoneDialog from "../Dialogs/GateZoneId";
+import ZoneDialog from "../dialogs/GateZoneId";
 import { AxiosError } from "axios";
 import { ErrorResponse } from "@/types/ErrorReponse";
 

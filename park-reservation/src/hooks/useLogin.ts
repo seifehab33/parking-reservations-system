@@ -1,5 +1,6 @@
 "use client";
 import { loginUser } from "@/services/auth";
+import { ErrorResponse } from "@/types/ErrorReponse";
 import { LoginPayload, LoginResponse } from "@/types/Login";
 import { useMutation } from "@tanstack/react-query";
 import { AxiosError } from "axios";
