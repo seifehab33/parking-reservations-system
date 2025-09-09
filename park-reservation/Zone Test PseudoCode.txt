@@ -1,0 +1,11 @@
+Pseudocode plan:
+
+Mock useZone and useCategories hooks to return test data.
+Mock UI components (Input, Card, etc.) and icons.
+Render the Zones page.
+Test:
+Loading state.
+Rendering of zones.
+Search and filter functionality.
+"No zones found" message.
+Use React Testing Library for rendering and assertions.
