@@ -1,0 +1,7 @@
+While reviewing the project setup, I noticed a couple of important points in the backend configuration (server.js):
+
+CORS setup – It is not configured correctly, which may block requests from the frontend. Proper CORS middleware configuration is needed to allow requests from the client.
+
+Missing endpoints – Not all required APIs are implemented in server.js. For example, endpoints for retrieving rush hours and vacation hours should exist but are not currently present.
+
+I wanted to highlight these gaps since they are essential for the frontend to communicate properly with the server.
