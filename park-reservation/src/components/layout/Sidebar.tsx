@@ -74,6 +74,11 @@ const adminItems = [
     url: "/admin/categories",
     icon: LibraryBig,
   },
+  {
+    title: "VR Hours",
+    url: "/admin/vr-hours",
+    icon: Timer,
+  },
 ];
 
 export function AppSidebar() {

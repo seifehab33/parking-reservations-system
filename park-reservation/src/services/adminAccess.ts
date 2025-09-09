@@ -2,6 +2,12 @@ import api from "@/lib/axios";
 import { ParkingReport } from "@/types/AdminReports";
 import { CategoriesData } from "@/types/Categories";
 import { SubscriptionData } from "@/types/Subscriptions";
+import {
+  RushHourData,
+  RushHourResponse,
+  VacationData,
+  VacationHourReponse,
+} from "@/types/VRHours";
 import { openZoneResponse, ZoneData } from "@/types/Zone";
 
 export async function updateCategory({
@@ -37,5 +43,18 @@ export async function getSubscriptions(): Promise<SubscriptionData[]> {
 
 export async function getParkingStateReport(): Promise<ParkingReport[]> {
   const res = await api.get<ParkingReport[]>("/admin/reports/parking-state");
+  return res.data;
+}
+// Rush Hour
+export async function createRushHour(
+  data: RushHourData
+): Promise<RushHourResponse> {
+  const res = await api.post(`/admin/rush-hours`, data);
+  return res.data;
+}
+export async function createVacation(
+  data: VacationData
+): Promise<VacationHourReponse> {
+  const res = await api.post(`/admin/vacations`, data);
   return res.data;
 }
