@@ -32,15 +32,15 @@ const LoginForm = () => {
               <Truck className="h-10 w-10 text-primary-foreground" />
             </div>
           </div>
-          <h1 className="text-3xl font-bold tracking-tight">WeLink Cargo</h1>
-          <p className="text-muted-foreground">Parking Reservation System</p>
+          <h1 className="text-3xl font-bold tracking-tight">ParkPilot</h1>
+          <p className="text-muted-foreground">Smart Parking Operations</p>
         </div>
 
         <Card className="animate-slide-up shadow-lg">
           <CardHeader className="space-y-1">
             <CardTitle className="text-2xl font-semibold">Sign In</CardTitle>
             <CardDescription>
-              Enter your credentials to access the parking management system
+              Enter your credentials to manage zones, check-ins, and reports
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -79,7 +79,7 @@ const LoginForm = () => {
         </Card>
 
         <p className="text-center text-sm text-muted-foreground">
-          © 2024 WeLink Cargo. All rights reserved.
+          2026 ParkPilot. All rights reserved.
         </p>
       </div>
     </div>
