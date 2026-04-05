@@ -1,12 +1,12 @@
-# Parking Reservation Backend - WeLink Cargo
+# Parking Reservation Backend
 
-**A comprehensive parking reservation system developed for WeLink Cargo company hiring and training purposes.**
+**A comprehensive parking reservation system built as a personal project.**
 
-This is a complete **Express + WebSocket** backend implementation for the Parking Reservation System with full business logic, real-time notifications, and comprehensive test coverage. Originally designed as a starter project, it has been enhanced into a production-ready system for evaluation and training scenarios.
+This is a complete **Express + WebSocket** backend implementation for the Parking Reservation System with full business logic, real-time notifications, and comprehensive test coverage. Originally designed as a starter project, it has been enhanced into a production-ready system for real-world parking operations.
 
-## Company & Purpose
+## Project Purpose
 
-This application was designed and developed for **WeLink Cargo** company as part of their hiring and training program. It demonstrates:
+This application was designed and developed as a personal project. It demonstrates:
 - Full-stack development capabilities
 - Real-time system architecture
 - Comprehensive testing practices
