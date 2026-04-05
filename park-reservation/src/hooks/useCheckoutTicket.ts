@@ -4,6 +4,7 @@ import { checkOutTicket } from "@/services/getPublicAccess";
 import { AxiosError } from "axios";
 import { ErrorResponse } from "@/types/ErrorReponse";
 import { CheckOutResponse, CheckOutTicketData } from "@/types/Ticket";
+import { getApiErrorMessage } from "@/lib/getApiErrorMessage";
 
 export const useCheckOutTicket = () => {
   return useMutation<
@@ -18,7 +19,7 @@ export const useCheckOutTicket = () => {
       );
     },
     onError: (error) => {
-      toast.error(error?.response?.data?.message || "❌ Checkout failed");
+      toast.error(getApiErrorMessage(error, "Checkout failed"));
     },
   });
 };

@@ -22,7 +22,7 @@ export function Providers({ children }: { children: ReactNode }) {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         {children}
-        <Toaster />
+        <Toaster richColors />
       </TooltipProvider>
     </QueryClientProvider>
   );

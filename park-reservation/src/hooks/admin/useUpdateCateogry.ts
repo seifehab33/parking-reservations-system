@@ -4,6 +4,7 @@ import { ErrorResponse } from "@/types/ErrorReponse";
 import { useMutation } from "@tanstack/react-query";
 import { AxiosError } from "axios";
 import { toast } from "sonner";
+import { getApiErrorMessage } from "@/lib/getApiErrorMessage";
 
 export function useUpdateCategory() {
   return useMutation<CategoriesData, AxiosError<ErrorResponse>, CategoriesData>(
@@ -13,9 +14,7 @@ export function useUpdateCategory() {
         toast.success("Category updated successfully!");
       },
       onError: (error) => {
-        const message =
-          error.response?.data?.error ?? "Login failed. Try again.";
-        toast.error(message);
+        toast.error(getApiErrorMessage(error, "Category update failed."));
       },
     }
   );

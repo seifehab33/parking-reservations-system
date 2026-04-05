@@ -6,6 +6,7 @@ import { useMutation } from "@tanstack/react-query";
 import { AxiosError } from "axios";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
+import { getApiErrorMessage } from "@/lib/getApiErrorMessage";
 
 export function useLogin() {
   const router = useRouter();
@@ -20,9 +21,7 @@ export function useLogin() {
     onError: (error) => {
       localStorage.removeItem("token");
       localStorage.removeItem("userRole");
-      const message =
-        error.response?.data?.message ?? "Login failed. Try again.";
-      toast.error(message);
+      toast.error(getApiErrorMessage(error, "Login failed. Try again."));
     },
   });
 }

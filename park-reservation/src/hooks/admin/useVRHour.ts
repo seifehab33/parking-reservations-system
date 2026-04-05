@@ -11,18 +11,17 @@ import {
 import { useMutation } from "@tanstack/react-query";
 import { AxiosError } from "axios";
 import { toast } from "sonner";
+import { getApiErrorMessage } from "@/lib/getApiErrorMessage";
 
 export function useCreateRushHour() {
   return useMutation<RushHourResponse, AxiosError<ErrorResponse>, RushHourData>(
     {
       mutationFn: createRushHour,
       onSuccess: (data) => {
-        toast.success(
-          `Rush hour added for ${data.weekDay} ${data.from}–${data.to}`
-        );
+        toast.success(`Rush hour added for ${data.weekDay} ${data.from}-${data.to}`);
       },
       onError: (err) => {
-        toast.error(err?.response?.data?.message || "Failed to add rush hour");
+        toast.error(getApiErrorMessage(err, "Failed to add rush hour"));
       },
     }
   );
@@ -35,10 +34,10 @@ export function useCreateVacation() {
   >({
     mutationFn: createVacation,
     onSuccess: (data) => {
-      toast.success(`Vacation added: ${data.name} / ${data.from}–${data.to}`);
+      toast.success(`Vacation added: ${data.name} / ${data.from}-${data.to}`);
     },
     onError: (err) => {
-      toast.error(err?.response?.data?.message || "Failed to add vacation");
+      toast.error(getApiErrorMessage(err, "Failed to add vacation"));
     },
   });
 }

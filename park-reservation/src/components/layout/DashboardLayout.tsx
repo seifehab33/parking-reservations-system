@@ -28,7 +28,7 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
               <SidebarTrigger className="text-foreground hover:bg-accent" />
               <div className="h-6 w-px bg-border" />
               <h1 className="text-sm font-semibold md:text-xl ">
-                Parking Management System
+                Smart Parking Operations
               </h1>
             </div>
 
@@ -44,7 +44,7 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
                 <div className="text-sm">
                   {/* <div className="font-medium capitalize">{userRole}</div> */}
                   <div className="text-muted-foreground text-xs">
-                    WeLink Cargo
+                    ParkPilot
                   </div>
                 </div>
               </div>

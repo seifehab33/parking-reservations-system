@@ -5,6 +5,7 @@ import { useZonesStore } from "@/store/zonesStore";
 import { openZoneResponse } from "@/types/Zone";
 import { AxiosError } from "axios";
 import { ErrorResponse } from "@/types/ErrorReponse";
+import { getApiErrorMessage } from "@/lib/getApiErrorMessage";
 
 interface TogglePayload {
   zoneId: string;
@@ -32,7 +33,7 @@ const useOpenZone = () => {
       );
     },
     onError: (error) => {
-      toast.error(error?.response?.data?.message || "❌ Failed to toggle zone");
+      toast.error(getApiErrorMessage(error, "Failed to toggle zone"));
     },
   });
 };
